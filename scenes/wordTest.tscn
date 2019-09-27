@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/player.gd" type="Script" id=1]
+[ext_resource path="res://assets/player/player.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 6.40813, 8.6077 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "idle"
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 160.222, 10 )
+
+[node name="wordTest" type="Node2D"]
+
+[node name="player" type="KinematicBody2D" parent="."]
+position = Vector2( 19.1124, 110.999 )
+script = ExtResource( 1 )
+
+[node name="sprite" type="Sprite" parent="player"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+centered = false
+vframes = 2
+hframes = 2
+
+[node name="shape" type="CollisionShape2D" parent="player"]
+position = Vector2( 16.3275, 23.4433 )
+shape = SubResource( 1 )
+
+[node name="anim" type="AnimationPlayer" parent="player"]
+anims/idle = SubResource( 2 )
+
+[node name="posBala" type="Position2D" parent="player"]
+position = Vector2( 30, 23 )
+
+[node name="hall" type="StaticBody2D" parent="."]
+position = Vector2( 0, 159.399 )
+
+[node name="shape" type="CollisionShape2D" parent="hall"]
+self_modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 160.946, 25.3037 )
+shape = SubResource( 3 )
+
+[node name="shape4" type="CollisionShape2D" parent="hall"]
+self_modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 159.742, -169.458 )
+shape = SubResource( 3 )
+
+[node name="shape2" type="CollisionShape2D" parent="hall"]
+self_modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 330.404, -106.782 )
+rotation = -1.5708
+shape = SubResource( 3 )
+
+[node name="shape3" type="CollisionShape2D" parent="hall"]
+self_modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -8.97888, -106.782 )
+rotation = -1.5708
+shape = SubResource( 3 )
