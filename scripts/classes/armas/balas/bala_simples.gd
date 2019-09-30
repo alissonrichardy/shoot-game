@@ -1,6 +1,6 @@
 
 
-var intervalo = 0.3
+var intervalo = 0.2
 var ultimo_disparo = 0
 var player
 var pre_bala = preload("res://scenes/tiros/tiro_normal.tscn")

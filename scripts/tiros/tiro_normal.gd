@@ -1,6 +1,6 @@
 extends Area2D
 
-var velocidade = 200
+var velocidade = 300
 var dano = 1
 var limite_tela = 100
 var posicao_inicial
